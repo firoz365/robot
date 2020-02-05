@@ -11,7 +11,7 @@ public class UserAction {
 
     public void next(String userInput ){
 
-        if(!this.validateUserInput(userInput))
+        if(!this.isValidateUserInput(userInput))
             return;
 
         if(userInput.contains("PLACE"))
@@ -22,7 +22,7 @@ public class UserAction {
 
     private void next(Action action , Robot robot){
 
-        if(!this.validateUserAction(action))
+        if(!this.isValidateUserAction(action))
             return;
 
         switch(action){
@@ -47,18 +47,23 @@ public class UserAction {
         }
     }
 
-    private boolean validateUserAction(Action action) {
+    private boolean isValidateUserAction(Action action) {
         if(robot == null && action != PLACE){
-            //throw new RuntimeException("Robot not initialized....[PLACE the robot first , check ReadMe]"); // We can create our custom exception and throw it
             System.out.println("Place the robot first");
             return false;
         }
         return true;
     }
 
-    private boolean validateUserInput(String userInput){
+    private boolean isValidateUserInput(String userInput){
 
-        boolean isValid = Arrays.asList(PLACE_REGEX, LEFT_REGEX, RIGHT_REGEX, MOVE_REGEX, REPORT_REGEX)
+        boolean isValid = Arrays.asList(
+                PLACE_REGEX,
+                LEFT_REGEX,
+                RIGHT_REGEX,
+                MOVE_REGEX,
+                REPORT_REGEX
+        )
                 .stream()
                 .anyMatch(e -> userInput.matches(e));
 
@@ -71,11 +76,3 @@ public class UserAction {
 }
 
 
-/*
-if(userInput.matches(PLACE_REGEX)
-                || userInput.matches(LEFT_REGEX)
-                || userInput.matches(RIGHT_REGEX)
-                || userInput.matches(MOVE_REGEX)
-                || userInput.matches(REPORT_REGEX)){
-
- */
