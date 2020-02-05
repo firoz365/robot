@@ -12,6 +12,6 @@ public enum Action {
     public static Action getByName(String name){
         return Arrays.stream(Action.values()).filter(e-> e.name().equals( name))
                 .findFirst()
-                .orElseThrow(()-> new RuntimeException(String.format("No action found for action %s " , name)));
+                .orElseThrow(()-> new RuntimeException(String.format("No action found for action %s" , name)));
     }
 }

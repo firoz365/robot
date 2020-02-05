@@ -94,4 +94,15 @@ class DirectionTest {
 		assertEquals(NORTH , direction);
 	}
 
+	@Test
+	void max(){
+		Direction max = Direction.max();
+		assertEquals(3 , max.getValue());
+	}
+
+	@Test
+	void min(){
+		Direction min = Direction.min();
+		assertEquals(0 , min.getValue());
+	}
 }

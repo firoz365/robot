@@ -12,10 +12,6 @@ public class Position {
     @Override
     public String toString() {
         return String.format("(%s,%s)" , x , y);
-//        return "Position{" +
-//                "x=" + x +
-//                ", y=" + y +
-//                '}';
     }
 
     public Position(Integer x, Integer y) {

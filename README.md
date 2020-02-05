@@ -1,4 +1,4 @@
-checkout the project from following git repository <>
+checkout the project from following git repository
 
 #    git@github.com:firoz365/robot.git #
 

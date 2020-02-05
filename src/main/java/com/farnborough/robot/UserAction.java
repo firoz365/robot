@@ -73,6 +73,10 @@ public class UserAction {
         System.out.println("Not a valid option");
         return false;
     }
+
+    public Robot getRobot() {
+        return robot;
+    }
 }
 
 

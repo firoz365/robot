@@ -52,9 +52,17 @@ public class Robot {
 
     @Override
     public String toString() { // TODO :: Use a StringBuilder Here
-        return "Simulator{" +
+        return "ROBOT [" +
                 "currentPosition=" + currentPosition +
                 ", currentDirection=" + currentDirection +
-                '}';
+                ']';
+    }
+
+    public Position getCurrentPosition() {
+        return currentPosition;
+    }
+
+    public Direction getCurrentDirection() {
+        return currentDirection;
     }
 }
