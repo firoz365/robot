@@ -30,4 +30,4 @@ Simulator{currentPosition=(0,3), currentDirection=WEST}
 quit
 
 Here is the screenshot -
-![Alt text](Capture.gpg)
+![Alt text](Capture.jpg)
