@@ -30,5 +30,6 @@ REPORT : <br/>
 Simulator{currentPosition=(0,3), currentDirection=WEST} <br/>
 quit <br/>
 
-Here is the screenshot -
+<h1>Here is the screenshot -</h1>
+
 ![Alt text](./Capture.JPG)
