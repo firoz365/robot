@@ -1,4 +1,4 @@
-package com.farnborough.robot;
+package com.farnborough.robot.constant;
 
 public interface Constant {
     static int MIN_X = 0 ;

@@ -1,5 +1,6 @@
 package com.farnborough.robot;
 
+import com.farnborough.robot.exception.NotAValidDirectionException;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

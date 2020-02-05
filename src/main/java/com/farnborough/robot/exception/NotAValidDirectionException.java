@@ -1,4 +1,4 @@
-package com.farnborough.robot;
+package com.farnborough.robot.exception;
 
 public class NotAValidDirectionException extends RuntimeException {
 
