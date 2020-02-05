@@ -1,10 +1,11 @@
 checkout the project from following git repository
-git@github.com:firoz365/robot.git
+
+#git@github.com:firoz365/robot.git#
 
 Then go to target folder and run the following command -
-    java -jar robot-0.0.1-SNAPSHOT.jar
+#    java -jar robot-0.0.1-SNAPSHOT.jar #
 
-To quit type quite , exit or !q
+To quit  - type quit , exit or !q
 
 Then you can enter commands like following  -
 
