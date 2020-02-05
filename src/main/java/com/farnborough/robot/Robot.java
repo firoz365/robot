@@ -7,14 +7,19 @@ public class Robot {
 
     public Robot(String text){
 
-        String[] split = text.substring("PLACE".length())
-                .trim()
-                .split(",");
+        try{
+            String[] split = text.trim().substring("PLACE".length())
+                    .trim()
+                    .split(",");
 
-        int x = Integer.parseInt(split[0].trim());
-        int y = Integer.parseInt(split[1].trim());
-        this.currentPosition = new Position(x , y);
-        this.currentDirection = Direction.getByName(split[1].trim());
+            int x = Integer.parseInt(split[0].trim());
+            int y = Integer.parseInt(split[1].trim());
+            this.currentPosition = new Position(x , y);
+            this.currentDirection = Direction.getByName(split[1].trim());
+
+        }catch(Exception e){
+           throw new RuntimeException("PLACE action is not correct!");
+        }
     }
 
     public void move(){

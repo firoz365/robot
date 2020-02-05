@@ -32,7 +32,7 @@ enum Direction {
 
     public static Direction getByName(String in){
         return Arrays.stream(Direction.values())
-                .filter(e->e.name.equalsIgnoreCase(in))
+                .filter(e->e.name.equals(in))
                 .findFirst()
                 .orElseThrow(()-> new NotAValidDirectionException("Not a valid direction"));
     }
