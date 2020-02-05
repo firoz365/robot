@@ -1,5 +1,7 @@
 package com.farnborough.robot;
 
+import java.util.Arrays;
+
 import static com.farnborough.robot.Action.PLACE;
 import static com.farnborough.robot.constant.Constant.*;
 
@@ -9,7 +11,8 @@ public class UserAction {
 
     public void next(String userInput ){
 
-        this.validateUserInput(userInput);
+        if(!this.validateUserInput(userInput))
+            return;
 
         if(userInput.contains("PLACE"))
             this.next(PLACE , new Robot(userInput));
@@ -19,7 +22,8 @@ public class UserAction {
 
     private void next(Action action , Robot robot){
 
-        this.validateUserAction(action);
+        if(!this.validateUserAction(action))
+            return;
 
         switch(action){
             case PLACE:
@@ -36,31 +40,42 @@ public class UserAction {
                 break;
             case REPORT:
                 System.out.println("REPORT : ");
-                System.out.println(robot);
+                System.out.println(this.robot);
                 break;
             default :
                 throw new RuntimeException("Not a valid option"); // We can create our custom exception and throw it
         }
     }
 
-    private void validateUserAction(Action action) {
+    private boolean validateUserAction(Action action) {
         if(robot == null && action != PLACE){
-            throw new RuntimeException("Robot not initialized....[PLACE the robot first , check ReadMe]"); // We can create our custom exception and throw it
+            //throw new RuntimeException("Robot not initialized....[PLACE the robot first , check ReadMe]"); // We can create our custom exception and throw it
+            System.out.println("Place the robot first");
+            return false;
         }
+        return true;
     }
 
-    private void validateUserInput(String userInput){
+    private boolean validateUserInput(String userInput){
 
-        if(!userInput.matches(PLACE_REGEX)
-                &&!userInput.matches(LEFT_REGEX)
-                &&!userInput.matches(RIGHT_REGEX)
-                &&!userInput.matches(MOVE_REGEX)
-                &&!userInput.matches(REPORT_REGEX) ){
-//
-//  Arrays.asList(PLACE_REGEX ,LEFT_REGEX ,RIGHT_REGEX , MOVE_REGEX , REPORT_REGEX  ).stream().noneMatch(e->userInput.matches(e)).
+        boolean isValid = Arrays.asList(PLACE_REGEX, LEFT_REGEX, RIGHT_REGEX, MOVE_REGEX, REPORT_REGEX)
+                .stream()
+                .anyMatch(e -> userInput.matches(e));
 
+        if(isValid)
+            return true ;
 
-            throw new RuntimeException("Not a valid user input");
-        }
+        System.out.println("Not a valid option");
+        return false;
     }
 }
+
+
+/*
+if(userInput.matches(PLACE_REGEX)
+                || userInput.matches(LEFT_REGEX)
+                || userInput.matches(RIGHT_REGEX)
+                || userInput.matches(MOVE_REGEX)
+                || userInput.matches(REPORT_REGEX)){
+
+ */

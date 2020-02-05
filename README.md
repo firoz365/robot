@@ -1,2 +1,1 @@
-Work in progress...
-It's a spring boot application
+Pre Requisite - If the first command is not PLACE then the program will exit

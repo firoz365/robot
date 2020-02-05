@@ -43,11 +43,11 @@ public class Robot {
     }
 
     public void turnLeft(){
-        this.currentDirection.turnLeft();
+        this.currentDirection = this.currentDirection.turnLeft();
     }
 
     public void turnRight(){
-        this.currentDirection.turnRight();
+        this.currentDirection = this.currentDirection.turnRight();
     }
 
     @Override
