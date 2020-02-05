@@ -1,7 +1,5 @@
 package com.farnborough.robot;
 
-import java.util.Arrays;
-
 import static com.farnborough.robot.Action.PLACE;
 import static com.farnborough.robot.constant.Constant.*;
 
@@ -53,13 +51,13 @@ public class UserAction {
 
     private void validateUserInput(String userInput){
 
-        if(!userInput.matches(PLACE_PATTERN)
-                &&!userInput.matches(LEFT_PATTERN)
-                &&!userInput.matches(RIGHT_PATTERN)
-                &&!userInput.matches(MOVE_PATTERN)
-                &&!userInput.matches(REPORT_PATTERN) ){
+        if(!userInput.matches(PLACE_REGEX)
+                &&!userInput.matches(LEFT_REGEX)
+                &&!userInput.matches(RIGHT_REGEX)
+                &&!userInput.matches(MOVE_REGEX)
+                &&!userInput.matches(REPORT_REGEX) ){
 //
-//  Arrays.asList(PLACE_PATTERN ,LEFT_PATTERN ,RIGHT_PATTERN , MOVE_PATTERN , REPORT_PATTERN  ).stream().noneMatch(e->userInput.matches(e)).
+//  Arrays.asList(PLACE_REGEX ,LEFT_REGEX ,RIGHT_REGEX , MOVE_REGEX , REPORT_REGEX  ).stream().noneMatch(e->userInput.matches(e)).
 
 
             throw new RuntimeException("Not a valid user input");

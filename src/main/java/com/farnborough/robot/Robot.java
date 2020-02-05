@@ -15,7 +15,7 @@ public class Robot {
             int x = Integer.parseInt(split[0].trim());
             int y = Integer.parseInt(split[1].trim());
             this.currentPosition = new Position(x , y);
-            this.currentDirection = Direction.getByName(split[1].trim());
+            this.currentDirection = Direction.getByName(split[2].trim());
 
         }catch(Exception e){
            throw new RuntimeException("PLACE action is not correct!");

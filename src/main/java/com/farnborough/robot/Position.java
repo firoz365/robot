@@ -33,12 +33,12 @@ public class Position {
 
     public void nextX(int movePosition) {
         int newX = this.getX() + movePosition;
-        this.x = (newX > Constant.MAX_X || newX < Constant.MIN_X) ? this.getX() : newX ;
+        this.x = (newX > MAX_X || newX < MIN_X) ? this.getX() : newX ;
     }
 
     public void nextY(int movePosition) {
         int newY = this.y + movePosition;
-        this.y = (newY > Constant.MAX_Y || newY < Constant.MIN_Y) ? this.getY() : newY ;
+        this.y = (newY > MAX_Y || newY < MIN_Y) ? this.getY() : newY ;
     }
 
 }
