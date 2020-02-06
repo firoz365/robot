@@ -17,7 +17,7 @@ public class UserAction {
         if(userInput.contains("PLACE"))
             this.next(PLACE , new Robot(userInput));
         else
-            this.next(Action.getByName(userInput) , null);
+            this.next(Action.getByName(userInput.trim()) , null);
     }
 
     private void next(Action action , Robot robot){
